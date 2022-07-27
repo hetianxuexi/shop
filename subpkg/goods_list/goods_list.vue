@@ -1,6 +1,6 @@
 <template>
 	<view>
-	cate
+		goods_list
 	</view>
 </template>
 

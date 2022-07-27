@@ -1,6 +1,6 @@
 <template>
 	<view>
-	cate
+		hhh
 	</view>
 </template>
 

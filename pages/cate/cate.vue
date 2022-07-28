@@ -1,5 +1,6 @@
 <template>
 	<view>
+		<my-search @click="gotoSeatch"></my-search>
 		<view class="scroll-container">
 			<!-- 左侧滚动区域 -->
 			<scroll-view class="scroll-left" scroll-y :style="{height:wh + 'px'}">
@@ -43,7 +44,8 @@
 		onLoad() {
 			//获取可用窗口高度
 		const SystemHeight = uni.getSystemInfoSync()
-		this.wh = SystemHeight.windowHeight
+		//需要减去搜索组件的高度
+		this.wh = SystemHeight.windowHeight - 50
 		//调用获取分类数据的方法
 		this.getCateList()
 		},
@@ -71,6 +73,13 @@
 			gotoGoodsList(item3){
 				uni.navigateTo({
 					url:`/subpkg/goods_list/goods_list?cid=${item3.cat_id}`
+				})
+			},
+			//点击搜索组件跳转到搜索页面
+			gotoSeatch(){
+				console.log("ok");
+				uni.navigateTo({
+					url:'/subpkg/goods_search/goods_search'
 				})
 			}
 		}

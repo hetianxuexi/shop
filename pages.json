@@ -33,7 +33,9 @@
                     "style" :                                                                                    
                 {
                     "navigationBarTitleText": "",
-                    "enablePullDownRefresh": false
+                    "enablePullDownRefresh": true,
+					"backgroundColor": "#f8f8f8",
+					"onReachBottomDistance": 100
                 }
                 
                 }
@@ -74,7 +76,7 @@
 			"selectedIconPath":"static/tab_icons/cart-active.png"
 		},{
 			"pagePath":"pages/my/my",
-			"text":"我的",
+			"text":"个人中心",
 			"iconPath":"static/tab_icons/my.png",
 			"selectedIconPath":"static/tab_icons/my-active.png"
 		}]

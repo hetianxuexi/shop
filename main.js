@@ -14,7 +14,7 @@ uni.$showMsg = function(){
 import { $http } from '@escook/request-miniprogram'
 uni.$http = $http
 // 配置请求根路径
-$http.baseUrl = 'https://www.uinav.com'
+$http.baseUrl = 'http://api-hmugo-web.itheima.net'
 
 // 请求拦截器
 $http.beforeRequest = function (options) {

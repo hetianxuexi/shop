@@ -18,7 +18,7 @@
 		<!-- 标题 -->
 		<view class="history-title">
 			<text>搜索历史</text>
-			<uni-icons type="trash" size="17" @click="deleteHistory"></uni-icons>
+			<uni-icons type="trash" size="16" @click="deleteHistory"></uni-icons>
 		</view>	
 		<view class="history-item">
 			 <uni-tag :text="item" v-for="(item, i) in historys" :key="i" :circle="true" type="error" @click="gotoGoodsList(item)"></uni-tag>
@@ -58,7 +58,7 @@
 					 return
 				}
 			const {data:res} =	await uni.$http.get('/api/public/v1/goods/qsearch',{query:this.keyWord})
-			// console.log(res);
+			console.log(res);
 				if(res.meta.status !== 200){
 					return this.$showMsg()
 				}
@@ -136,6 +136,7 @@
 			display: flex;
 			flex-wrap: wrap;
 			.uni-tag{
+				font-size: 14px !important;
 				margin: 5px 8px 5px 0;
 			}
 		}

@@ -42,6 +42,7 @@
 </template>
 
 <script>
+	import tabMixins from '@/mixins/mixins.js'
 	export default {
 		data() {
 			return {
@@ -53,6 +54,7 @@
 				floorList:[]
 			};
 		},
+		mixins:[tabMixins],
 		onLoad() {
 			//调用方法获取轮播图数据
 			this.getSwiperList(),

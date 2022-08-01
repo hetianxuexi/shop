@@ -28,6 +28,7 @@
 </template>
 
 <script>
+	import tabMixins from '@/mixins/mixins.js'
 	export default {
 		data() {
 			return {
@@ -41,6 +42,7 @@
 				cateLevel2:[]
 			};
 		},
+		mixins:[tabMixins],
 		onLoad() {
 			//获取可用窗口高度
 		const SystemHeight = uni.getSystemInfoSync()

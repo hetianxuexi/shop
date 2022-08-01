@@ -33,6 +33,7 @@
 </template>
 
 <script>
+	import {mapMutations,mapGetters} from 'vuex'
 	export default {
 		data() {
 			return {
@@ -44,6 +45,7 @@
 			 text: '店铺',
 		}, {
 			icon: 'cart',
+			info:0,
 			text: '购物车',
 		}],
 			buttonGroup: [{
@@ -88,10 +90,37 @@
 					})
 				}
 			},
-			//点击购买
-			buttonClick(){
-				
+			//点击加入购物车
+			buttonClick(e){
+				if(e.content.text === '加入购物车'){
+					const goods = {
+						goods_id:this.goodsInfo.goods_id,
+						goods_name:this.goodsInfo.goods_name,
+						goods_price:this.goodsInfo.goods_price,
+						goods_count:1,
+						goods_small_logo:this.goodsInfo.goods_small_logo,
+						goods_state:true
+					}
+				this.addCart(goods)
+				}	
+			},
+			//将写在cart里的方法映射到页面中使用,将数据存储在仓库cart中
+			...mapMutations('cart',['addCart'])
+		},
+		computed:{
+			...mapGetters('cart',['total'])
+		},
+		watch:{
+			total:{
+				immediate:true,
+				handler(newValue){
+					const result = this.options.find(item=>item.text === '购物车')
+					if(result){
+						result.info = newValue
+					}
+				}
 			}
+	
 		}
 	}
 </script>

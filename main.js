@@ -9,7 +9,8 @@ uni.$showMsg = function(){
 		icon:'none'
 	})
 }
-
+//引入store
+import store from 'store/store.js'
 //引入第三方网络
 import { $http } from '@escook/request-miniprogram'
 uni.$http = $http
@@ -31,6 +32,7 @@ Vue.config.productionTip = false
 App.mpType = 'app'	
 
 const app = new Vue({
-	...App
+	...App,
+	store
 })
 app.$mount()

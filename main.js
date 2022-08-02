@@ -2,9 +2,9 @@ import Vue from 'vue'
 import App from './App'
 
 //封装提示消息的方法
-uni.$showMsg = function(){
+uni.$showMsg = function(msg){
 	uni.showToast({
-		title:'数据请求失败!',
+		title:msg || '数据请求失败',
 		duration:1500,
 		icon:'none'
 	})
